@@ -1,0 +1,4 @@
+Containers handle state and logic. Contains everythign such as onClick etc.
+
+components are more static - treat like a read only. They will present the data and push it back up 
+
