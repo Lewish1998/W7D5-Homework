@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import FavouritePokemon from "../components/FavouritePokemon";
 import PokemonList from "../components/PokemonList";
 import SpecificPokemon from "../components/SpecificPokemon";
 import './container.css'
@@ -13,6 +14,20 @@ const PokemonContainer = () => {
       getPokemon();
     }, [])
     
+
+    const handlePokemonSelected = selectedPokemon => {
+      setSelectedPokemon(selectedPokemon)
+    }
+
+    const handleFavouriteToggle = (selectedPokemon) => {
+      const updatedPokemon = pokemon.map((pokemon) => {
+        return pokemon.name = 'name'
+        ? {...pokemon, isFavourite: !pokemon.isFavourite}
+        : pokemon
+      })
+      setPokemon(updatedPokemon)
+    }
+
 
     const getPokemon = function(){
         fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=20')
@@ -42,6 +57,7 @@ const PokemonContainer = () => {
           </div>
           <PokemonList pokemon={pokemon} getSpecificPokemon={getSpecificPokemon}/>
           <ul>{selectedPokemon ? <SpecificPokemon selectedPokemon={selectedPokemon}/> : null }</ul>
+          <FavouritePokemon pokemon={pokemon} onPokemonSelected={handlePokemonSelected}/>
         </div>
     )
 }
