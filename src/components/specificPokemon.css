@@ -1,0 +1,14 @@
+#specific-pokemon {
+    color:darkblue;
+    border: black solid;
+    list-style: none;
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+#box {
+    display: flex;
+    justify-content: center;
+}

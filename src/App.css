@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+#red {
+  color:red;
+}
+#yellow {
+  color:yellow;
+}
+#white {
+  color:white;
+}
+
+#bg {
+  z-index: -1;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#list {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20% ;
+  margin: 10px;
+  padding-top: 10px;
+  text-align: center;
+  list-style: none;
+  border: solid;
+}
+
+
+#logo {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
